@@ -1,4 +1,5 @@
 const { defineConfig } = require('vite');
+const handlebars = require('vite-plugin-handlebars');
 
 module.exports = defineConfig({
   root: 'src',
@@ -6,4 +7,5 @@ module.exports = defineConfig({
     outDir: '../dist',
     emptyOutDir: true,
   },
+  plugins: [handlebars()],
 });
