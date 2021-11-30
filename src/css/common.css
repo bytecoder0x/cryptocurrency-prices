@@ -36,6 +36,22 @@ body {
   pointer-events: none;
 }
 
+.current {
+  position: relative;
+  color: var(--accent-hover-cl);
+}
+
+.current::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-hover-cl);
+}
+
 /* Tablet */
 @media screen and (min-width: 768px) {
   .container {
