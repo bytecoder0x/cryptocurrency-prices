@@ -36,6 +36,14 @@ body {
   pointer-events: none;
 }
 
+.is-up {
+  color: var(--green-cl);
+}
+
+.is-down {
+  color: var(--red-cl);
+}
+
 .current {
   position: relative;
   color: var(--accent-hover-cl);

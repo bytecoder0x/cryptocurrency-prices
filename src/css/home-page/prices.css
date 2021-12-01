@@ -1,0 +1,123 @@
+/* PRICES TABLE */
+.prices {
+  padding: 24px 0 64px;
+}
+
+.prices-title {
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--main-cl);
+}
+
+.prices-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--light-grey-cl);
+  border-radius: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.prices-table {
+  width: 100%;
+  min-width: 720px;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.prices-th {
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.17;
+  text-align: right;
+  white-space: nowrap;
+  color: var(--grey-cl);
+  background-color: var(--bg-cl);
+}
+
+.prices-th:first-child,
+.prices-th-coin {
+  text-align: left;
+}
+
+.prices-td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--light-grey-cl);
+  text-align: right;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-variant-numeric: tabular-nums;
+  color: var(--main-cl);
+}
+
+.prices-td:first-child,
+.prices-td:nth-child(2) {
+  text-align: left;
+}
+
+.prices-item {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.prices-item:hover {
+  background-color: var(--bg-cl);
+}
+
+.prices-table tbody .prices-item:last-child td.prices-td {
+  border-bottom: none;
+}
+
+.prices-rank {
+  width: 1%;
+  color: var(--grey-cl);
+}
+
+.prices-coin {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.prices-coin-img {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+.prices-coin-name {
+  font-weight: 500;
+  color: var(--main-cl);
+}
+.prices-coin-symbol {
+  font-size: 12px;
+  line-height: 1.17;
+  text-transform: uppercase;
+  color: var(--grey-cl);
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .prices {
+    padding-bottom: 96px;
+  }
+
+  .prices-title {
+    margin-bottom: 24px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1158px) {
+  .prices-table {
+    font-size: 16px;
+  }
+
+  .prices-th,
+  .prices-td {
+    padding: 14px 20px;
+  }
+}
