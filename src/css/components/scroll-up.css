@@ -1,0 +1,37 @@
+/* SCROLL UP BUTTON */
+.scroll-up-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--accent-cl);
+  color: var(--white-cl);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-up-btn:hover,
+.scroll-up-btn:focus {
+  background-color: var(--accent-hover-cl);
+}
+
+.scroll-up-icon {
+  fill: currentColor;
+}
+
+.scroll-visible {
+  opacity: 1;
+  transform: scale(1);
+}
