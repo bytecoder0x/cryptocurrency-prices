@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 export function formatPrice(price) {
   if (price === null || price === undefined) {
     return '—';
@@ -57,4 +59,23 @@ export function getChangeClass(n) {
   }
 
   return n >= 0 ? 'is-up' : 'is-down';
+}
+
+export function showError(message) {
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: message || 'Something went wrong!',
+  });
+}
+
+export function showLoader() {
+  document.querySelector('.loader-container').classList.remove('is-hidden');
+}
+
+export function hideLoader() {
+  // small delay so loader dont blink
+  setTimeout(() => {
+    document.querySelector('.loader-container').classList.add('is-hidden');
+  }, 300);
 }

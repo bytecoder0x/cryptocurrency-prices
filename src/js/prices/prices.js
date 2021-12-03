@@ -1,4 +1,5 @@
 import { getCoinsMarkets } from '../services/coingecko-api';
+import { hideLoader, showError, showLoader } from '../services/helpers';
 import { createPricesMarkup } from './markup-prices';
 
 const COIN_IDS = [
@@ -34,14 +35,17 @@ const list = document.querySelector('.prices-list');
 let coins = [];
 
 function loadPrices() {
+  showLoader();
+
   getCoinsMarkets(COIN_IDS)
     .then(markets => {
       coins = markets;
       renderPrices();
     })
     .catch(error => {
-      console.log(error);
-    });
+      showError();
+    })
+    .finally(hideLoader);
 }
 
 function renderPrices() {
