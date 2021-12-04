@@ -165,3 +165,13 @@ export function getUniswapPrices() {
     return { ethUsd, prices, pairs };
   });
 }
+
+export async function getNetworkStats() {
+  const blockNumber = await provider.getBlockNumber();
+  const gasPrice = await provider.getGasPrice();
+
+  return {
+    blockNumber,
+    gasPriceGwei: Number(ethers.utils.formatUnits(gasPrice, 'gwei')),
+  };
+}
