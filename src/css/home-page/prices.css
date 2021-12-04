@@ -99,6 +99,10 @@
   color: var(--grey-cl);
 }
 
+.prices-empty-value {
+  color: var(--grey-cl);
+}
+
 /* Tablet */
 @media screen and (min-width: 768px) {
   .prices {

@@ -16,6 +16,15 @@ export function createPricesMarkup(coins) {
 }
 
 function createCoinMarkup(coin) {
+  let uniswapPrice = '<span class="prices-empty-value">—</span>';
+  let difference = '<span class="prices-empty-value">—</span>';
+
+  // not all coins have pool on uniswap
+  if (coin.uniswapPrice) {
+    uniswapPrice = formatPrice(coin.uniswapPrice);
+    difference = formatPercent(coin.difference);
+  }
+
   return `<tr class="prices-item">
     <td class="prices-td prices-rank">${coin.market_cap_rank || '—'}</td>
     <td class="prices-td">
@@ -32,5 +41,7 @@ function createCoinMarkup(coin) {
       coin.price_change_percentage_24h
     )}">${formatPercent(coin.price_change_percentage_24h)}</td>
     <td class="prices-td">${formatBigNumber(coin.market_cap)}</td>
+    <td class="prices-td">${uniswapPrice}</td>
+    <td class="prices-td ${getChangeClass(coin.difference)}">${difference}</td>
   </tr>`;
 }
