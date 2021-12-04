@@ -11,4 +11,5 @@
 @import url('./components/scroll-up.css');
 
 /* home page styles */
+@import url('./home-page/hero.css');
 @import url('./home-page/prices.css');
