@@ -18,10 +18,13 @@ const COIN_IDS = [
 ];
 
 const list = document.querySelector('.prices-list');
+const emptyText = document.querySelector('.prices-empty');
+const form = document.querySelector('.filters-form');
+const updatedEl = document.querySelector('.filters-updated');
 
 let coins = [];
 
-function loadPrices() {
+export function loadPrices() {
   showLoader();
 
   Promise.all([getCoinsMarkets(COIN_IDS), getUniswapPrices()])
@@ -42,6 +45,7 @@ function loadPrices() {
 
       coins = markets;
       renderPrices();
+      updatedEl.textContent = new Date().toLocaleTimeString();
     })
     .catch(error => {
       showError();
@@ -49,8 +53,23 @@ function loadPrices() {
     .finally(hideLoader);
 }
 
-function renderPrices() {
-  list.innerHTML = createPricesMarkup(coins);
+export function renderPrices() {
+  const search = form.elements.search.value.trim().toLowerCase();
+
+  let filtredCoins = coins.filter(coin => {
+    return (
+      coin.name.toLowerCase().includes(search) ||
+      coin.symbol.toLowerCase().includes(search)
+    );
+  });
+
+  list.innerHTML = createPricesMarkup(filtredCoins);
+
+  if (filtredCoins.length === 0) {
+    emptyText.classList.remove('is-hidden');
+  } else {
+    emptyText.classList.add('is-hidden');
+  }
 }
 
 loadPrices();

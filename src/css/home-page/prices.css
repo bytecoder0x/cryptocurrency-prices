@@ -103,6 +103,13 @@
   color: var(--grey-cl);
 }
 
+.prices-empty {
+  margin-top: 16px;
+  font-size: 14px;
+  text-align: center;
+  color: var(--grey-cl);
+}
+
 /* Tablet */
 @media screen and (min-width: 768px) {
   .prices {
