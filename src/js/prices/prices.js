@@ -13,7 +13,6 @@ const COIN_IDS = [
   'dogecoin',
   'polkadot',
   'tron',
-  'matic-network',
   'litecoin',
 ];
 
