@@ -1,0 +1,147 @@
+/* FILTERS */
+.filters {
+  padding-top: 32px;
+}
+
+.filters-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.filters-search {
+  position: relative;
+  flex: 1 1 100%;
+}
+
+.filters-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  fill: currentColor;
+  color: var(--grey-cl);
+  pointer-events: none;
+}
+
+.filters-input,
+.filters-select {
+  height: 40px;
+  border: 1px solid var(--light-grey-cl);
+  border-radius: 4px;
+  background-color: var(--white-cl);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--main-cl);
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filters-input {
+  width: 100%;
+  padding: 0 12px 0 40px;
+}
+
+.filters-input::placeholder {
+  color: var(--grey-cl);
+}
+
+.filters-select {
+  flex: 1 1 auto;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.filters-input:hover,
+.filters-input:focus,
+.filters-select:hover,
+.filters-select:focus {
+  border-color: var(--accent-cl);
+}
+
+.filters-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-cl);
+  cursor: pointer;
+  user-select: none;
+}
+
+.filters-checkbox-input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--accent-cl);
+  cursor: pointer;
+}
+
+/* refresh btn */
+.filters-refresh-btn {
+  margin-left: auto;
+  min-width: 120px;
+  height: 40px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--accent-cl);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--white-cl);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filters-refresh-btn:hover,
+.filters-refresh-btn:focus {
+  background-color: var(--accent-hover-cl);
+}
+
+.filters-status {
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8a93a5;
+  margin-top: 12px;
+}
+
+.filters-updated {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .filters {
+    padding-top: 48px;
+  }
+
+  .filters-search {
+    flex: 1 1 200px;
+  }
+
+  .filters-select {
+    flex: 0 0 auto;
+    min-width: 140px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1158px) {
+  .filters-form {
+    gap: 16px;
+  }
+
+  .filters-search {
+    flex: 0 1 320px;
+  }
+
+  .filters-select {
+    min-width: 168px;
+  }
+}
