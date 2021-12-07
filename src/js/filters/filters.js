@@ -12,4 +12,6 @@ form.addEventListener('submit', e => {
 
 // wait 300ms after typing
 form.elements.search.addEventListener('input', debounce(renderPrices, 300));
+form.elements.sort.addEventListener('change', renderPrices);
+form.elements.onchain.addEventListener('change', renderPrices);
 refreshBtn.addEventListener('click', loadPrices);

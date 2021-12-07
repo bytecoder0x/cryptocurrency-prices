@@ -13,6 +13,16 @@
           autocomplete="off"
         />
       </label>
+      <select class="filters-select" name="sort">
+        <option value="market_cap">Market cap</option>
+        <option value="price">Price</option>
+        <option value="change">24h change</option>
+        <option value="difference">Difference</option>
+      </select>
+      <label class="filters-checkbox">
+        <input class="filters-checkbox-input" type="checkbox" name="onchain" />
+        <span class="filters-checkbox-text">Only with Uniswap pool</span>
+      </label>
       <button class="filters-refresh-btn" type="button">Refresh</button>
     </form>
     <p class="filters-status">

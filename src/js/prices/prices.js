@@ -55,6 +55,8 @@ export function loadPrices() {
 
 export function renderPrices() {
   const search = form.elements.search.value.trim().toLowerCase();
+  const sort = form.elements.sort.value;
+  const onlyOnchain = form.elements.onchain.checked;
 
   let filtredCoins = coins.filter(coin => {
     return (
@@ -63,6 +65,25 @@ export function renderPrices() {
     );
   });
 
+  if (onlyOnchain) {
+    filtredCoins = filtredCoins.filter(coin => coin.uniswapPrice !== null);
+  }
+
+  filtredCoins.sort((a, b) => {
+    if (sort === 'price') {
+      return b.current_price - a.current_price;
+    }
+    if (sort === 'change') {
+      return b.price_change_percentage_24h - a.price_change_percentage_24h;
+    }
+    if (sort === 'difference') {
+      return Math.abs(b.difference) - Math.abs(a.difference);
+    }
+    // by default market cap
+    return b.market_cap - a.market_cap;
+  });
+
+  // console.log(filtredCoins);
   list.innerHTML = createPricesMarkup(filtredCoins);
 
   if (filtredCoins.length === 0) {
