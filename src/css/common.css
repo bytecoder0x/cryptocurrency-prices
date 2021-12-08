@@ -60,6 +60,37 @@ body {
   background-color: var(--accent-hover-cl);
 }
 
+.btn-favorite {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: var(--grey-cl);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-favorite-icon {
+  fill: currentColor;
+}
+
+.btn-favorite.is-active {
+  color: var(--accent-cl);
+}
+
+/* .btn-favorite:hover {
+  transform: scale(1.1);
+} */
+
+.btn-favorite:hover,
+.btn-favorite:focus {
+  color: var(--accent-hover-cl);
+  background-color: var(--bg-cl);
+}
+
 /* Tablet */
 @media screen and (min-width: 768px) {
   .container {

@@ -58,6 +58,12 @@
   text-align: left;
 }
 
+.prices-td:last-child {
+  width: 1%;
+  padding: 8px 16px;
+  text-align: center;
+}
+
 .prices-item {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -130,5 +136,9 @@
   .prices-th,
   .prices-td {
     padding: 14px 20px;
+  }
+
+  .prices-td:last-child {
+    padding: 8px 20px;
   }
 }

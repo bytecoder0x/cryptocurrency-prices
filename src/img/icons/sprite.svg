@@ -12,6 +12,32 @@
     <path d="M5 12l7-7 7 7" />
   </symbol>
   <symbol
+    id="icon-star"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M12 2.5 14.59 8.94 21.51 9.41 16.18 13.86 17.88 20.59 12 16.9 6.12 20.59 7.82 13.86 2.49 9.41 9.41 8.94Z"
+    />
+  </symbol>
+  <symbol
+    id="icon-star-filled"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="M12 2.5 14.59 8.94 21.51 9.41 16.18 13.86 17.88 20.59 12 16.9 6.12 20.59 7.82 13.86 2.49 9.41 9.41 8.94Z"
+    />
+  </symbol>
+  <symbol
     id="icon-search"
     viewBox="0 0 24 24"
     fill="none"

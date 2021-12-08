@@ -1,6 +1,12 @@
 import { getCoinsMarkets } from '../services/coingecko-api';
 import { getUniswapPrices, PAIRS } from '../services/uniswap-api';
-import { hideLoader, showError, showLoader } from '../services/helpers';
+import {
+  getFavorites,
+  hideLoader,
+  showError,
+  showLoader,
+  toggleFavorite,
+} from '../services/helpers';
 import { createPricesMarkup } from './markup-prices';
 
 const COIN_IDS = [
@@ -56,6 +62,7 @@ export function renderPrices() {
   const search = form.elements.search.value.trim().toLowerCase();
   const sort = form.elements.sort.value;
   const onlyOnchain = form.elements.onchain.checked;
+  const favorites = getFavorites();
 
   let filtredCoins = coins.filter(coin => {
     return (
@@ -83,7 +90,7 @@ export function renderPrices() {
   });
 
   // console.log(filtredCoins);
-  list.innerHTML = createPricesMarkup(filtredCoins);
+  list.innerHTML = createPricesMarkup(filtredCoins, favorites);
 
   if (filtredCoins.length === 0) {
     emptyText.classList.remove('is-hidden');
@@ -91,6 +98,15 @@ export function renderPrices() {
     emptyText.classList.add('is-hidden');
   }
 }
+
+// stars in table
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.btn-favorite');
+
+  if (btn) {
+    toggleFavorite(btn.dataset.favoriteId);
+  }
+});
 
 loadPrices();
 setInterval(loadPrices, 60000);

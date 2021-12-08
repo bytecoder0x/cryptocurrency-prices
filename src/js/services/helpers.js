@@ -1,4 +1,19 @@
 import Swal from 'sweetalert2';
+import sprite from '../../img/icons/sprite.svg';
+
+export function saveToLS(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
+}
+
+export function loadFromLS(key) {
+  const data = localStorage.getItem(key);
+
+  if (data) {
+    return JSON.parse(data);
+  }
+
+  return null;
+}
 
 export function formatPrice(price) {
   if (price === null || price === undefined) {
@@ -78,4 +93,35 @@ export function hideLoader() {
   setTimeout(() => {
     document.querySelector('.loader-container').classList.add('is-hidden');
   }, 300);
+}
+
+export function getFavorites() {
+  return loadFromLS('favorites') || [];
+}
+
+export function toggleFavorite(id) {
+  let favorites = getFavorites();
+
+  if (favorites.includes(id)) {
+    favorites = favorites.filter(item => item !== id);
+  } else {
+    favorites.push(id);
+  }
+
+  saveToLS('favorites', favorites);
+
+  // update all stars of this coin
+  const inFavorites = favorites.includes(id);
+  const icon = inFavorites ? 'icon-star-filled' : 'icon-star';
+  const buttons = document.querySelectorAll(`[data-favorite-id="${id}"]`);
+
+  buttons.forEach(btn => {
+    if (inFavorites) {
+      btn.classList.add('is-active');
+    } else {
+      btn.classList.remove('is-active');
+    }
+
+    btn.querySelector('use').setAttribute('href', `${sprite}#${icon}`);
+  });
 }

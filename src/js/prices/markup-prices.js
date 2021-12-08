@@ -1,3 +1,4 @@
+import sprite from '../../img/icons/sprite.svg';
 import {
   formatBigNumber,
   formatPercent,
@@ -5,17 +6,19 @@ import {
   getChangeClass,
 } from '../services/helpers';
 
-export function createPricesMarkup(coins) {
+export function createPricesMarkup(coins, favorites) {
   let markup = '';
 
   coins.forEach(coin => {
-    markup += createCoinMarkup(coin);
+    markup += createCoinMarkup(coin, favorites.includes(coin.id));
   });
 
   return markup;
 }
 
-function createCoinMarkup(coin) {
+function createCoinMarkup(coin, inFavorites) {
+  const starIcon = inFavorites ? 'icon-star-filled' : 'icon-star';
+  const activeClass = inFavorites ? ' is-active' : '';
   let uniswapPrice = '<span class="prices-empty-value">—</span>';
   let difference = '<span class="prices-empty-value">—</span>';
 
@@ -43,5 +46,14 @@ function createCoinMarkup(coin) {
     <td class="prices-td">${formatBigNumber(coin.market_cap)}</td>
     <td class="prices-td">${uniswapPrice}</td>
     <td class="prices-td ${getChangeClass(coin.difference)}">${difference}</td>
+    <td class="prices-td">
+      <button class="btn-favorite${activeClass}" type="button" data-favorite-id="${
+    coin.id
+  }" aria-label="Add or remove from favorites">
+        <svg class="btn-favorite-icon" width="20" height="20">
+          <use href="${sprite}#${starIcon}"></use>
+        </svg>
+      </button>
+    </td>
   </tr>`;
 }
