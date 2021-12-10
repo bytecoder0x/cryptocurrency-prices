@@ -109,6 +109,7 @@ export function toggleFavorite(id) {
   }
 
   saveToLS('favorites', favorites);
+  updateFavoritesCounter();
 
   // update all stars of this coin
   const inFavorites = favorites.includes(id);
@@ -124,4 +125,10 @@ export function toggleFavorite(id) {
 
     btn.querySelector('use').setAttribute('href', `${sprite}#${icon}`);
   });
+}
+
+export function updateFavoritesCounter() {
+  const counter = document.querySelector('.favorites-counter');
+
+  counter.textContent = getFavorites().length;
 }

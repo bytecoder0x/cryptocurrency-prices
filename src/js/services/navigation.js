@@ -1,3 +1,5 @@
+import { updateFavoritesCounter } from './helpers';
+
 const links = document.querySelectorAll('.header-navigation-link');
 
 // current page from url, for / its index.html
@@ -14,3 +16,5 @@ links.forEach(link => {
     link.classList.add('current');
   }
 });
+
+updateFavoritesCounter();

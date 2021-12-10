@@ -55,6 +55,10 @@
   color: var(--accent-hover-cl);
 }
 
+.favorites-counter {
+  font-variant-numeric: tabular-nums;
+}
+
 /* Tablet */
 @media screen and (min-width: 768px) {
   .header-container {
