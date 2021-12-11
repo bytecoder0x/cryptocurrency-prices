@@ -1,0 +1,183 @@
+/* POOLS */
+.pools {
+  padding: 48px 0 64px;
+}
+
+.pools-title {
+  margin-bottom: 8px;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: var(--main-cl);
+}
+
+.pools-text {
+  max-width: 640px;
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+
+.pools-summary {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.pools-summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: var(--bg-cl);
+}
+
+.pools-summary-label {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--grey-cl);
+}
+
+.pools-summary-value {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  color: var(--main-cl);
+}
+
+.pools-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--light-grey-cl);
+  border-radius: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pools-table {
+  width: 100%;
+  min-width: 720px;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.pools-th {
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.17;
+  text-align: right;
+  white-space: nowrap;
+  color: var(--grey-cl);
+  background-color: var(--bg-cl);
+}
+
+.pools-th:first-child {
+  text-align: left;
+}
+
+.pools-td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--light-grey-cl);
+  text-align: right;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-variant-numeric: tabular-nums;
+  color: var(--main-cl);
+}
+
+.pools-td:first-child {
+  text-align: left;
+}
+
+.pools-item {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pools-item:hover {
+  background-color: var(--bg-cl);
+}
+
+.pools-item:last-child .pools-td {
+  border-bottom: none;
+}
+
+.pools-pair {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pools-pair-name {
+  font-weight: 500;
+}
+
+.pools-pair-fee {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1.17;
+  font-weight: 500;
+  color: var(--accent-cl);
+  background-color: var(--light-grey-cl);
+}
+
+.pools-reserves {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.pools-reserve {
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .pools {
+    padding: 64px 0 96px;
+  }
+
+  .pools-text {
+    margin-bottom: 32px;
+  }
+
+  .pools-summary {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .pools-summary-item {
+    padding: 20px 24px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1158px) {
+  .pools-title {
+    font-size: 48px;
+    line-height: 1.07;
+  }
+
+  .pools-table {
+    font-size: 16px;
+  }
+
+  .pools-th,
+  .pools-td {
+    padding: 14px 20px;
+  }
+
+  .pools-reserve {
+    font-size: 14px;
+  }
+}
