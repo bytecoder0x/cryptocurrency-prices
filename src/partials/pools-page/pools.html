@@ -1,0 +1,39 @@
+<section class="pools">
+  <div class="pools-container container">
+    <h1 class="pools-title">Uniswap V2 pools</h1>
+    <p class="pools-text">
+      Reserves are read directly from the pair contracts on Ethereum mainnet.
+      TVL is calculated with CoinGecko prices.
+    </p>
+    <ul class="pools-summary">
+      <li class="pools-summary-item">
+        <span class="pools-summary-label">Total TVL</span>
+        <span class="pools-summary-value" data-summary="tvl">—</span>
+      </li>
+      <li class="pools-summary-item">
+        <span class="pools-summary-label">ETH price (Uniswap)</span>
+        <span class="pools-summary-value" data-summary="eth-price">—</span>
+      </li>
+      <li class="pools-summary-item">
+        <span class="pools-summary-label">Latest block</span>
+        <span class="pools-summary-value" data-summary="block-number">—</span>
+      </li>
+    </ul>
+    <div class="pools-table-wrapper">
+      <table class="pools-table">
+        <thead>
+          <tr>
+            <th class="pools-th">Pool</th>
+            <th class="pools-th">Reserves</th>
+            <th class="pools-th">Pool price</th>
+            <th class="pools-th">CoinGecko</th>
+            <th class="pools-th">Difference</th>
+            <th class="pools-th">TVL</th>
+            <th class="pools-th">Contract</th>
+          </tr>
+        </thead>
+        <tbody class="pools-list"></tbody>
+      </table>
+    </div>
+  </div>
+</section>

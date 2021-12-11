@@ -11,6 +11,7 @@ module.exports = defineConfig({
       input: {
         main: resolve(__dirname, 'src/index.html'),
         favorites: resolve(__dirname, 'src/favorites.html'),
+        pools: resolve(__dirname, 'src/pools.html'),
       },
     },
   },
