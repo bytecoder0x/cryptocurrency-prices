@@ -1,0 +1,211 @@
+/* MODAL COIN */
+.modal-backdrop-coin {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(31, 36, 48, 0.4);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-coin {
+  position: relative;
+  width: calc(100% - 32px);
+  max-width: 600px;
+  max-height: 90vh;
+  padding: 24px;
+  overflow-y: auto;
+  border-radius: 8px;
+  background-color: var(--white-cl);
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 1px rgba(0, 0, 0, 0.14);
+  transform: scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-backdrop-coin.is-hidden .modal-coin {
+  transform: scale(0.95);
+}
+
+.modal-coin-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: var(--light-grey-cl);
+  color: var(--main-cl);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-coin-close:hover,
+.modal-coin-close:focus {
+  border-color: transparent;
+  background-color: var(--accent-hover-cl);
+  color: var(--white-cl);
+}
+
+.modal-coin-close-icon {
+  fill: currentColor;
+}
+
+.modal-coin-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding-right: 40px;
+  margin-bottom: 16px;
+}
+
+.modal-coin-img {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.modal-coin-heading {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.modal-coin-name {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--main-cl);
+}
+
+.modal-coin-symbol {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--grey-cl);
+}
+
+.modal-coin-rank {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--grey-cl);
+}
+
+.modal-coin-favorite {
+  flex-shrink: 0;
+}
+
+.modal-coin-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.modal-coin-price-value {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--main-cl);
+}
+
+.modal-coin-price-change {
+  font-size: 16px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.modal-coin-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.modal-coin-stats-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #f5f7fa;
+}
+
+.modal-coin-stats-label {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--grey-cl);
+}
+.modal-coin-stats-value {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+  color: var(--main-cl);
+}
+
+.modal-coin-onchain {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--light-grey-cl);
+}
+
+.modal-coin-onchain-title {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--main-cl);
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .modal-coin {
+    padding: 32px;
+  }
+
+  .modal-coin-close {
+    top: 24px;
+    right: 24px;
+  }
+
+  .modal-coin-name {
+    font-size: 24px;
+  }
+
+  .modal-coin-price-value {
+    font-size: 36px;
+  }
+
+  .modal-coin-stats {
+    gap: 16px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1158px) {
+  .modal-coin-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

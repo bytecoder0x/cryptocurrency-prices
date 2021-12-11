@@ -21,3 +21,6 @@
 /* favorites page styles */
 @import url('./favorites-page/favorites.css');
 @import url('./favorites-page/empty-content.css');
+
+/* modals styles */
+@import url('./modals/modal-coin.css');
