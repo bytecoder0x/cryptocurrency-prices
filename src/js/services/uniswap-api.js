@@ -144,7 +144,7 @@ async function getPairData(pair) {
   };
 }
 
-function getPairsData() {
+export function getPairsData() {
   return Promise.all(PAIRS.map(pair => getPairData(pair)));
 }
 
