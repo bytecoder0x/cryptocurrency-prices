@@ -38,7 +38,7 @@ export function formatPrice(price) {
   );
 }
 
-// for market cap
+// for market cap, volume, tvl
 export function formatBigNumber(n) {
   if (n >= 1e12) {
     return '$' + (n / 1e12).toFixed(2) + 'T';
@@ -111,7 +111,7 @@ export function toggleFavorite(id) {
   saveToLS('favorites', favorites);
   updateFavoritesCounter();
 
-  // update all stars of this coin
+  // update all stars of this coin (in table and in modal)
   const inFavorites = favorites.includes(id);
   const icon = inFavorites ? 'icon-star-filled' : 'icon-star';
   const buttons = document.querySelectorAll(`[data-favorite-id="${id}"]`);

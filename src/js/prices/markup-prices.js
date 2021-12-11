@@ -28,7 +28,7 @@ function createCoinMarkup(coin, inFavorites) {
     difference = formatPercent(coin.difference);
   }
 
-  return `<tr class="prices-item">
+  return `<tr class="prices-item" data-id="${coin.id}">
     <td class="prices-td prices-rank">${coin.market_cap_rank || '—'}</td>
     <td class="prices-td">
       <div class="prices-coin">

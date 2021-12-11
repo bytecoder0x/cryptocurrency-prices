@@ -3,6 +3,7 @@ import { getUniswapPrices } from '../services/uniswap-api';
 import {
   getFavorites,
   hideLoader,
+  saveToLS,
   showError,
   showLoader,
   toggleFavorite,
@@ -72,6 +73,7 @@ async function loadFavorites() {
     });
 
     coins = markets;
+    saveToLS('coins', coins);
     renderFavorites();
   } catch (error) {
     showError();

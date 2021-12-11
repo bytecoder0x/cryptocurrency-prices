@@ -3,6 +3,7 @@ import { getUniswapPrices, PAIRS } from '../services/uniswap-api';
 import {
   getFavorites,
   hideLoader,
+  saveToLS,
   showError,
   showLoader,
   toggleFavorite,
@@ -49,6 +50,7 @@ export function loadPrices() {
       });
 
       coins = markets;
+      saveToLS('coins', coins);
       renderPrices();
       updatedEl.textContent = new Date().toLocaleTimeString();
     })
@@ -99,7 +101,7 @@ export function renderPrices() {
   }
 }
 
-// stars in table
+// stars in table and in modal
 document.addEventListener('click', e => {
   const btn = e.target.closest('.btn-favorite');
 
