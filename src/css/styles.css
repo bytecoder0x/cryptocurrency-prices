@@ -14,3 +14,7 @@
 @import url('./home-page/hero.css');
 @import url('./home-page/filters.css');
 @import url('./home-page/prices.css');
+
+/* favorites page styles */
+@import url('./favorites-page/favorites.css');
+@import url('./favorites-page/empty-content.css');
