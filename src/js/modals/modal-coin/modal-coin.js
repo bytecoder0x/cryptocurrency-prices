@@ -1,5 +1,6 @@
 import { getFavorites, loadFromLS } from '../../services/helpers';
 import { createModalCoinMarkup } from './markup-modal-coin';
+import { drawSparkline } from './sparkline';
 
 const backdrop = document.querySelector('.modal-backdrop-coin');
 const closeBtn = document.querySelector('.modal-coin-close');
@@ -15,6 +16,13 @@ function openModal(id) {
   const inFavorites = getFavorites().includes(id);
 
   content.innerHTML = createModalCoinMarkup(coin, inFavorites);
+
+  const canvas = content.querySelector('.modal-coin-chart');
+  const prices = coin.sparkline_in_7d ? coin.sparkline_in_7d.price : [];
+  // green if price go up for 7 days
+  const isUp = prices[prices.length - 1] >= prices[0];
+
+  drawSparkline(canvas, prices, isUp);
 
   backdrop.classList.remove('is-hidden');
   document.body.style.overflow = 'hidden';

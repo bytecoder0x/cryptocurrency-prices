@@ -66,6 +66,8 @@ export function createModalCoinMarkup(coin, inFavorites) {
       coin.price_change_percentage_24h
     )}">${formatPercent(coin.price_change_percentage_24h)}</span>
   </div>
+  <canvas class="modal-coin-chart" width="520" height="140"></canvas>
+  <p class="modal-coin-chart-label">Last 7 days</p>
   <ul class="modal-coin-stats">
     ${createStatMarkup('Market cap', formatBigNumber(coin.market_cap))}
     ${createStatMarkup('24h volume', formatBigNumber(coin.total_volume))}

@@ -132,6 +132,22 @@
   font-variant-numeric: tabular-nums;
 }
 
+.modal-coin-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 4px;
+  border-radius: 4px;
+}
+
+.modal-coin-chart-label {
+  margin-bottom: 16px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--grey-cl);
+}
+
 .modal-coin-stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
