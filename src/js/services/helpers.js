@@ -40,6 +40,10 @@ export function formatPrice(price) {
 
 // for market cap, volume, tvl
 export function formatBigNumber(n) {
+  if (!n) {
+    return '—';
+  }
+
   if (n >= 1e12) {
     return '$' + (n / 1e12).toFixed(2) + 'T';
   }
