@@ -4,6 +4,7 @@ const handlebars = require('vite-plugin-handlebars');
 
 module.exports = defineConfig({
   root: 'src',
+  base: '/cryptocurrency-prices/',
   build: {
     outDir: '../dist',
     emptyOutDir: true,
